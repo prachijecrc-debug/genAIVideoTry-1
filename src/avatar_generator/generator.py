@@ -225,7 +225,7 @@ class AvatarGenerator:
         
         # Get audio duration and analyze for lip sync
         try:
-            from moviepy import AudioFileClip
+            from moviepy.editor import AudioFileClip
             audio_clip = AudioFileClip(audio_path)
             duration = audio_clip.duration
             
@@ -275,7 +275,7 @@ class AvatarGenerator:
         
         # Add audio to video
         try:
-            from moviepy import VideoFileClip, AudioFileClip
+            from moviepy.editor import VideoFileClip, AudioFileClip
             video = VideoFileClip(str(output_path))
             audio = AudioFileClip(audio_path)
             final_video = video.set_audio(audio)

@@ -386,3 +386,43 @@ Check the documentation of torch.load to learn more about types accepted by defa
 2025-10-04 12:30:21.778 | INFO     | src.video_exporter.exporter:export:102 - Exporting video with instagram preset
 2025-10-04 12:30:21.778 | INFO     | src.video_exporter.exporter:export:116 - Running FFmpeg command: ffmpeg -i temp/avatar_enhanced_82141_subtitled.mp4 -y -c:v h264 -b:v 5M -vf scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black -r 30 -c:a aac -b:a 128k -ar 44100 -f mp4 -movflags +faststart -t 90 output/the_future_of_artificial_intel_educational_30s.mp4
 2025-10-04 12:30:24.144 | INFO     | src.video_exporter.exporter:export:118 - Video exported successfully: output/the_future_of_artificial_intel_educational_30s.mp4
+2025-10-04 12:33:47.605 | INFO     | src.config:_load_config:41 - Using default configuration
+2025-10-04 12:33:47.605 | INFO     | src.prompt_generator.generator:__init__:59 - Prompt generator initialized
+2025-10-04 12:33:47.605 | INFO     | src.script_writer.writer:__init__:37 - Script writer initialized
+2025-10-04 12:33:47.605 | INFO     | src.voice_generator.generator:__init__:45 - Voice generator initialized with edge-tts engine
+2025-10-04 12:33:47.605 | INFO     | src.avatar_generator.generator:__init__:79 - Avatar generator initialized with wav2lip engine
+2025-10-04 12:33:47.605 | INFO     | src.visual_composer.composer:__init__:45 - Visual composer initialized with Whisper for captions
+2025-10-04 12:33:47.605 | INFO     | src.video_exporter.exporter:__init__:87 - Video exporter initialized with FFmpeg
+2025-10-04 12:33:47.605 | INFO     | src.pipeline:__init__:41 - Video generator initialized
+2025-10-04 12:33:47.606 | INFO     | src.pipeline:generate_script:56 - Generating script for topic: How machine learning works
+2025-10-04 12:33:47.606 | INFO     | src.prompt_generator.generator:generate:74 - Generating prompt for: How machine learning works
+2025-10-04 12:33:47.606 | INFO     | src.script_writer.writer:write:52 - Writing script for: How machine learning works
+2025-10-04 12:33:47.693 | WARNING  | src.script_writer.writer:_generate_with_ollama:121 - Error with Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10fa57230>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-10-04 12:33:47.693 | INFO     | src.script_writer.writer:_generate_fallback:165 - Using fallback script generation
+2025-10-04 12:33:47.693 | INFO     | __main__:main:153 - Script generated: 295 words
+2025-10-04 12:33:47.694 | INFO     | src.pipeline:generate_voice:86 - Generating voice with profile: female
+2025-10-04 12:33:47.694 | INFO     | src.voice_generator.generator:synthesize:60 - Synthesizing speech with female profile
+2025-10-04 12:33:49.034 | INFO     | src.voice_generator.generator:_synthesize_with_edge_tts:108 - Edge TTS synthesis complete: temp/voice/voice_cbc3813a.mp3
+2025-10-04 12:33:49.034 | INFO     | __main__:main:162 - Voice synthesized: temp/voice/voice_cbc3813a.mp3
+2025-10-04 12:33:49.034 | INFO     | src.pipeline:generate_avatar:109 - Generating avatar: default
+2025-10-04 12:33:49.034 | INFO     | src.avatar_generator.generator:generate:94 - Generating avatar video with default
+2025-10-04 12:33:49.034 | WARNING  | src.avatar_generator.generator:_check_wav2lip_available:131 - Wav2Lip checkpoint appears invalid (size: 9 bytes)
+2025-10-04 12:33:49.034 | WARNING  | src.avatar_generator.generator:generate:103 - Wav2Lip not fully configured, using enhanced fallback
+2025-10-04 12:33:49.034 | INFO     | src.avatar_generator.generator:_generate_enhanced_fallback:211 - Using enhanced fallback avatar generation
+2025-10-04 12:33:50.106 | WARNING  | src.avatar_generator.generator:_generate_enhanced_fallback:299 - Failed to add audio: No module named 'moviepy.editor'
+2025-10-04 12:33:50.106 | INFO     | __main__:main:172 - Avatar animated: temp/avatar_enhanced_85319.mp4
+2025-10-04 12:33:50.106 | INFO     | src.pipeline:add_visuals:130 - Adding visual elements
+2025-10-04 12:33:50.106 | INFO     | src.visual_composer.composer:compose:61 - Composing video with visual enhancements
+2025-10-04 12:33:50.106 | INFO     | src.visual_composer.composer:_add_background:378 - Adding background to video
+2025-10-04 12:33:50.106 | INFO     | src.visual_composer.composer:_add_effects:399 - Adding visual effects
+2025-10-04 12:33:50.106 | INFO     | __main__:main:182 - Visuals added
+2025-10-04 12:33:50.106 | INFO     | src.pipeline:add_captions:152 - Adding captions
+2025-10-04 12:33:50.106 | INFO     | src.visual_composer.composer:add_subtitles:89 - Generating subtitles with Whisper
+2025-10-04 12:33:51.281 | INFO     | src.visual_composer.composer:_generate_subtitles_with_whisper:114 - Loading Whisper model: base
+2025-10-04 12:33:55.615 | INFO     | src.visual_composer.composer:_generate_subtitles_with_whisper:128 - Generated subtitles: temp/subtitles_85319.srt
+2025-10-04 12:33:55.704 | WARNING  | src.visual_composer.composer:_burn_subtitles_ffmpeg:211 - FFmpeg subtitle burning failed: ffmpeg error (see stderr output for detail), using alternative method
+2025-10-04 12:33:56.022 | INFO     | __main__:main:194 - Captions added
+2025-10-04 12:33:56.022 | INFO     | src.pipeline:export_video:174 - Exporting video: output/how_machine_learning_works_tutorial_30s.mp4
+2025-10-04 12:33:56.022 | INFO     | src.video_exporter.exporter:export:102 - Exporting video with instagram preset
+2025-10-04 12:33:56.022 | INFO     | src.video_exporter.exporter:export:116 - Running FFmpeg command: ffmpeg -i temp/avatar_enhanced_85319_subtitled.mp4 -y -c:v h264 -b:v 5M -vf scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black -r 30 -c:a aac -b:a 128k -ar 44100 -f mp4 -movflags +faststart -t 90 output/how_machine_learning_works_tutorial_30s.mp4
+2025-10-04 12:33:57.076 | INFO     | src.video_exporter.exporter:export:118 - Video exported successfully: output/how_machine_learning_works_tutorial_30s.mp4

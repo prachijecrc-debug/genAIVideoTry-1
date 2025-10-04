@@ -54,7 +54,7 @@ class Config:
                 "base_url": "http://localhost:11434"  # For Ollama
             },
             "tts": {
-                "engine": "bark",  # bark, xtts, elevenlabs
+                "engine": "edge-tts",  # edge-tts, bark, xtts
                 "voice": "v2/en_speaker_0",
                 "speed": 1.0,
                 "pitch": 1.0,

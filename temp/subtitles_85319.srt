@@ -1,0 +1,16 @@
+1
+00:00:00,000 --> 00:00:04,040
+Now about how machine learning works! There's something important here!
+
+2
+00:00:04,400 --> 00:00:08,199
+Now about how machine learning works! There's something interesting here!
+
+3
+00:00:08,700 --> 00:00:12,759
+Now is how machine learning works! There's something interesting here!
+
+4
+00:00:13,080 --> 00:00:17,019
+Now about how machine learning works! There's something interesting here!
+
