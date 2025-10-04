@@ -208,12 +208,13 @@ class AvatarGenerator:
             avatar_img = self._create_placeholder_image()
         
         # Get audio duration
-        from moviepy.editor import AudioFileClip
         try:
+            from moviepy.editor import AudioFileClip
             audio_clip = AudioFileClip(audio_path)
             duration = audio_clip.duration
             audio_clip.close()
-        except:
+        except Exception as e:
+            logger.warning(f"Could not get audio duration: {e}")
             duration = 10.0  # Default duration
         
         # Create video writer
@@ -254,8 +255,8 @@ class AvatarGenerator:
         out.release()
         
         # Add audio to video
-        from moviepy.editor import VideoFileClip, CompositeAudioClip
         try:
+            from moviepy.editor import VideoFileClip, CompositeAudioClip
             video = VideoFileClip(str(output_path))
             audio = AudioFileClip(audio_path)
             final_video = video.set_audio(audio)

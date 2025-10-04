@@ -1,0 +1,150 @@
+2025-10-04 11:41:48.278 | INFO     | src.config:_load_config:41 - Using default configuration
+2025-10-04 11:41:48.279 | INFO     | src.prompt_generator.generator:__init__:59 - Prompt generator initialized
+2025-10-04 11:41:48.279 | INFO     | src.script_writer.writer:__init__:37 - Script writer initialized
+2025-10-04 11:41:48.279 | INFO     | src.voice_generator.generator:__init__:63 - Voice generator initialized with bark engine
+2025-10-04 11:41:48.279 | INFO     | src.avatar_generator.generator:_create_default_avatars:341 - Creating default avatar: default
+2025-10-04 11:41:48.282 | INFO     | src.avatar_generator.generator:_create_default_avatars:341 - Creating default avatar: female_1
+2025-10-04 11:41:48.282 | INFO     | src.avatar_generator.generator:_create_default_avatars:341 - Creating default avatar: male_1
+2025-10-04 11:41:48.284 | INFO     | src.avatar_generator.generator:_create_default_avatars:341 - Creating default avatar: animated
+2025-10-04 11:41:48.285 | INFO     | src.avatar_generator.generator:__init__:67 - Avatar generator initialized with wav2lip engine
+2025-10-04 11:41:48.286 | INFO     | src.visual_composer.composer:__init__:45 - Visual composer initialized with Whisper for captions
+2025-10-04 11:41:48.286 | INFO     | src.video_exporter.exporter:__init__:87 - Video exporter initialized with FFmpeg
+2025-10-04 11:41:48.286 | INFO     | src.pipeline:__init__:41 - Video generator initialized
+2025-10-04 11:41:48.287 | INFO     | src.pipeline:generate_script:56 - Generating script for topic: Make kids learn addition
+2025-10-04 11:41:48.287 | INFO     | src.prompt_generator.generator:generate:74 - Generating prompt for: Make kids learn addition
+2025-10-04 11:41:48.287 | INFO     | src.script_writer.writer:write:52 - Writing script for: Make kids learn addition
+2025-10-04 11:41:48.406 | WARNING  | src.script_writer.writer:_generate_with_ollama:121 - Error with Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x117f19ee0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-10-04 11:41:48.407 | INFO     | src.script_writer.writer:_generate_fallback:165 - Using fallback script generation
+2025-10-04 11:41:48.407 | INFO     | __main__:main:153 - Script generated: 577 words
+2025-10-04 11:41:48.409 | INFO     | src.pipeline:generate_voice:86 - Generating voice with profile: default
+2025-10-04 11:41:48.409 | INFO     | src.voice_generator.generator:synthesize:78 - Synthesizing speech with default profile
+2025-10-04 11:41:48.409 | WARNING  | src.voice_generator.generator:_synthesize_with_bark:152 - Bark not installed, using fallback
+2025-10-04 11:41:48.409 | INFO     | src.voice_generator.generator:_synthesize_fallback:210 - Using fallback TTS synthesis
+2025-10-04 11:41:51.020 | INFO     | src.voice_generator.generator:_synthesize_fallback:242 - Fallback synthesis complete: temp/voice_46689.wav
+2025-10-04 11:41:51.056 | WARNING  | src.voice_generator.generator:_post_process_audio:359 - pydub not available for post-processing
+2025-10-04 11:41:51.056 | INFO     | __main__:main:162 - Voice synthesized: temp/voice_46689.wav
+2025-10-04 11:41:51.057 | INFO     | src.pipeline:generate_avatar:109 - Generating avatar: default
+2025-10-04 11:41:51.057 | INFO     | src.avatar_generator.generator:generate:82 - Generating avatar video with default
+2025-10-04 11:41:51.057 | INFO     | src.avatar_generator.generator:_generate_with_wav2lip:158 - Using Wav2Lip for avatar generation
+2025-10-04 11:41:51.057 | INFO     | src.avatar_generator.generator:_generate_fallback:197 - Using fallback avatar generation
+2025-10-04 11:41:51.229 | WARNING  | src.avatar_generator.generator:_generate_with_wav2lip:183 - Wav2Lip generation failed: No module named 'moviepy.editor'
+2025-10-04 11:41:51.230 | INFO     | src.avatar_generator.generator:_generate_fallback:197 - Using fallback avatar generation
+2025-10-04 11:41:51.231 | ERROR    | __main__:main:215 - Error generating video: No module named 'moviepy.editor'
+2025-10-04 11:42:16.048 | INFO     | src.config:_load_config:41 - Using default configuration
+2025-10-04 11:42:16.048 | INFO     | src.prompt_generator.generator:__init__:59 - Prompt generator initialized
+2025-10-04 11:42:16.049 | INFO     | src.script_writer.writer:__init__:37 - Script writer initialized
+2025-10-04 11:42:16.049 | INFO     | src.voice_generator.generator:__init__:63 - Voice generator initialized with bark engine
+2025-10-04 11:42:16.049 | INFO     | src.avatar_generator.generator:__init__:67 - Avatar generator initialized with wav2lip engine
+2025-10-04 11:42:16.049 | INFO     | src.visual_composer.composer:__init__:45 - Visual composer initialized with Whisper for captions
+2025-10-04 11:42:16.049 | INFO     | src.video_exporter.exporter:__init__:87 - Video exporter initialized with FFmpeg
+2025-10-04 11:42:16.049 | INFO     | src.pipeline:__init__:41 - Video generator initialized
+2025-10-04 11:42:16.050 | INFO     | src.pipeline:generate_script:56 - Generating script for topic: Make kids learn addition
+2025-10-04 11:42:16.050 | INFO     | src.prompt_generator.generator:generate:74 - Generating prompt for: Make kids learn addition
+2025-10-04 11:42:16.050 | INFO     | src.script_writer.writer:write:52 - Writing script for: Make kids learn addition
+2025-10-04 11:42:16.152 | WARNING  | src.script_writer.writer:_generate_with_ollama:121 - Error with Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10b771e20>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-10-04 11:42:16.152 | INFO     | src.script_writer.writer:_generate_fallback:165 - Using fallback script generation
+2025-10-04 11:42:16.152 | INFO     | __main__:main:153 - Script generated: 577 words
+2025-10-04 11:42:16.152 | INFO     | src.pipeline:generate_voice:86 - Generating voice with profile: default
+2025-10-04 11:42:16.152 | INFO     | src.voice_generator.generator:synthesize:78 - Synthesizing speech with default profile
+2025-10-04 11:42:16.153 | WARNING  | src.voice_generator.generator:_synthesize_with_bark:152 - Bark not installed, using fallback
+2025-10-04 11:42:16.153 | INFO     | src.voice_generator.generator:_synthesize_fallback:210 - Using fallback TTS synthesis
+2025-10-04 11:42:17.178 | INFO     | src.voice_generator.generator:_synthesize_fallback:242 - Fallback synthesis complete: temp/voice_47328.wav
+2025-10-04 11:42:17.202 | WARNING  | src.voice_generator.generator:_post_process_audio:359 - pydub not available for post-processing
+2025-10-04 11:42:17.202 | INFO     | __main__:main:162 - Voice synthesized: temp/voice_47328.wav
+2025-10-04 11:42:17.203 | INFO     | src.pipeline:generate_avatar:109 - Generating avatar: default
+2025-10-04 11:42:17.203 | INFO     | src.avatar_generator.generator:generate:82 - Generating avatar video with default
+2025-10-04 11:42:17.203 | INFO     | src.avatar_generator.generator:_generate_with_wav2lip:158 - Using Wav2Lip for avatar generation
+2025-10-04 11:42:17.203 | INFO     | src.avatar_generator.generator:_generate_fallback:197 - Using fallback avatar generation
+2025-10-04 11:42:17.341 | WARNING  | src.avatar_generator.generator:_generate_with_wav2lip:183 - Wav2Lip generation failed: No module named 'moviepy.editor'
+2025-10-04 11:42:17.341 | INFO     | src.avatar_generator.generator:_generate_fallback:197 - Using fallback avatar generation
+2025-10-04 11:42:17.343 | ERROR    | __main__:main:215 - Error generating video: No module named 'moviepy.editor'
+2025-10-04 11:43:07.583 | INFO     | src.config:_load_config:41 - Using default configuration
+2025-10-04 11:43:07.584 | INFO     | src.prompt_generator.generator:__init__:59 - Prompt generator initialized
+2025-10-04 11:43:07.584 | INFO     | src.script_writer.writer:__init__:37 - Script writer initialized
+2025-10-04 11:43:07.584 | INFO     | src.voice_generator.generator:__init__:63 - Voice generator initialized with bark engine
+2025-10-04 11:43:07.585 | INFO     | src.avatar_generator.generator:__init__:67 - Avatar generator initialized with wav2lip engine
+2025-10-04 11:43:07.586 | INFO     | src.visual_composer.composer:__init__:45 - Visual composer initialized with Whisper for captions
+2025-10-04 11:43:07.586 | INFO     | src.video_exporter.exporter:__init__:87 - Video exporter initialized with FFmpeg
+2025-10-04 11:43:07.586 | INFO     | src.pipeline:__init__:41 - Video generator initialized
+2025-10-04 11:43:07.599 | INFO     | src.pipeline:generate_script:56 - Generating script for topic: Make kids learn addition
+2025-10-04 11:43:07.599 | INFO     | src.prompt_generator.generator:generate:74 - Generating prompt for: Make kids learn addition
+2025-10-04 11:43:07.600 | INFO     | src.script_writer.writer:write:52 - Writing script for: Make kids learn addition
+2025-10-04 11:43:07.708 | WARNING  | src.script_writer.writer:_generate_with_ollama:121 - Error with Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10c371220>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-10-04 11:43:07.708 | INFO     | src.script_writer.writer:_generate_fallback:165 - Using fallback script generation
+2025-10-04 11:43:07.708 | INFO     | __main__:main:153 - Script generated: 577 words
+2025-10-04 11:43:07.709 | INFO     | src.pipeline:generate_voice:86 - Generating voice with profile: default
+2025-10-04 11:43:07.709 | INFO     | src.voice_generator.generator:synthesize:78 - Synthesizing speech with default profile
+2025-10-04 11:43:07.709 | WARNING  | src.voice_generator.generator:_synthesize_with_bark:152 - Bark not installed, using fallback
+2025-10-04 11:43:07.709 | INFO     | src.voice_generator.generator:_synthesize_fallback:210 - Using fallback TTS synthesis
+2025-10-04 11:43:08.786 | INFO     | src.voice_generator.generator:_synthesize_fallback:242 - Fallback synthesis complete: temp/voice_48526.wav
+2025-10-04 11:43:08.812 | WARNING  | src.voice_generator.generator:_post_process_audio:359 - pydub not available for post-processing
+2025-10-04 11:43:08.812 | INFO     | __main__:main:162 - Voice synthesized: temp/voice_48526.wav
+2025-10-04 11:43:08.813 | INFO     | src.pipeline:generate_avatar:109 - Generating avatar: default
+2025-10-04 11:43:08.813 | INFO     | src.avatar_generator.generator:generate:82 - Generating avatar video with default
+2025-10-04 11:43:08.813 | INFO     | src.avatar_generator.generator:_generate_with_wav2lip:158 - Using Wav2Lip for avatar generation
+2025-10-04 11:43:08.813 | INFO     | src.avatar_generator.generator:_generate_fallback:197 - Using fallback avatar generation
+2025-10-04 11:43:08.955 | WARNING  | src.avatar_generator.generator:_generate_fallback:217 - Could not get audio duration: No module named 'moviepy.editor'
+2025-10-04 11:43:09.146 | WARNING  | src.avatar_generator.generator:_generate_fallback:273 - Failed to add audio: No module named 'moviepy.editor'
+2025-10-04 11:43:09.146 | INFO     | __main__:main:172 - Avatar animated: temp/avatar_48526.mp4
+2025-10-04 11:43:09.147 | INFO     | src.pipeline:add_visuals:130 - Adding visual elements
+2025-10-04 11:43:09.147 | INFO     | src.visual_composer.composer:compose:61 - Composing video with visual enhancements
+2025-10-04 11:43:09.147 | INFO     | src.visual_composer.composer:_add_background:378 - Adding background to video
+2025-10-04 11:43:09.147 | INFO     | src.visual_composer.composer:_add_effects:399 - Adding visual effects
+2025-10-04 11:43:09.147 | INFO     | __main__:main:182 - Visuals added
+2025-10-04 11:43:09.147 | INFO     | src.pipeline:add_captions:152 - Adding captions
+2025-10-04 11:43:09.147 | INFO     | src.visual_composer.composer:add_subtitles:89 - Generating subtitles with Whisper
+2025-10-04 11:43:09.148 | WARNING  | src.visual_composer.composer:_generate_subtitles_with_whisper:132 - Whisper not installed, using fallback
+2025-10-04 11:43:09.148 | INFO     | src.visual_composer.composer:_generate_subtitles_fallback:346 - Using fallback subtitle generation
+2025-10-04 11:43:09.171 | WARNING  | src.visual_composer.composer:_burn_subtitles_ffmpeg:211 - FFmpeg subtitle burning failed: [Errno 2] No such file or directory: 'ffmpeg', using alternative method
+2025-10-04 11:43:09.354 | INFO     | __main__:main:194 - Captions added
+2025-10-04 11:43:09.355 | INFO     | src.pipeline:export_video:174 - Exporting video: output/make_kids_learn_addition_educational_30s.mp4
+2025-10-04 11:43:09.355 | INFO     | src.video_exporter.exporter:export:102 - Exporting video with instagram preset
+2025-10-04 11:43:09.355 | INFO     | src.video_exporter.exporter:export:116 - Running FFmpeg command: ffmpeg -i temp/avatar_48526_subtitled.mp4 -y -c:v h264 -b:v 5M -vf scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black -r 30 -c:a aac -b:a 128k -ar 44100 -f mp4 -movflags +faststart -t 90 output/make_kids_learn_addition_educational_30s.mp4
+2025-10-04 11:43:09.362 | ERROR    | src.video_exporter.exporter:export:134 - FFmpeg not found. Please install FFmpeg.
+2025-10-04 11:52:35.076 | INFO     | src.config:_load_config:41 - Using default configuration
+2025-10-04 11:52:35.077 | INFO     | src.prompt_generator.generator:__init__:59 - Prompt generator initialized
+2025-10-04 11:52:35.077 | INFO     | src.script_writer.writer:__init__:37 - Script writer initialized
+2025-10-04 11:52:35.077 | INFO     | src.voice_generator.generator:__init__:63 - Voice generator initialized with bark engine
+2025-10-04 11:52:35.077 | INFO     | src.avatar_generator.generator:__init__:67 - Avatar generator initialized with wav2lip engine
+2025-10-04 11:52:35.077 | INFO     | src.visual_composer.composer:__init__:45 - Visual composer initialized with Whisper for captions
+2025-10-04 11:52:35.077 | INFO     | src.video_exporter.exporter:__init__:87 - Video exporter initialized with FFmpeg
+2025-10-04 11:52:35.077 | INFO     | src.pipeline:__init__:41 - Video generator initialized
+2025-10-04 11:52:35.078 | INFO     | src.pipeline:generate_script:56 - Generating script for topic: Make kids learn addition
+2025-10-04 11:52:35.078 | INFO     | src.prompt_generator.generator:generate:74 - Generating prompt for: Make kids learn addition
+2025-10-04 11:52:35.078 | INFO     | src.script_writer.writer:write:52 - Writing script for: Make kids learn addition
+2025-10-04 11:52:35.180 | WARNING  | src.script_writer.writer:_generate_with_ollama:121 - Error with Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d847410>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-10-04 11:52:35.180 | INFO     | src.script_writer.writer:_generate_fallback:165 - Using fallback script generation
+2025-10-04 11:52:35.180 | INFO     | __main__:main:153 - Script generated: 577 words
+2025-10-04 11:52:35.181 | INFO     | src.pipeline:generate_voice:86 - Generating voice with profile: default
+2025-10-04 11:52:35.181 | INFO     | src.voice_generator.generator:synthesize:78 - Synthesizing speech with default profile
+2025-10-04 11:54:10.564 | ERROR    | src.voice_generator.generator:_synthesize_with_bark:155 - Error with Bark synthesis: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([numpy.core.multiarray.scalar])` or the `torch.serialization.safe_globals([numpy.core.multiarray.scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+2025-10-04 11:54:10.918 | INFO     | src.voice_generator.generator:_synthesize_fallback:210 - Using fallback TTS synthesis
+2025-10-04 11:54:15.996 | INFO     | src.voice_generator.generator:_synthesize_fallback:242 - Fallback synthesis complete: temp/voice_59296.wav
+2025-10-04 11:54:28.572 | INFO     | __main__:main:162 - Voice synthesized: temp/voice_59296_processed.wav
+2025-10-04 11:54:28.573 | INFO     | src.pipeline:generate_avatar:109 - Generating avatar: default
+2025-10-04 11:54:28.573 | INFO     | src.avatar_generator.generator:generate:82 - Generating avatar video with default
+2025-10-04 11:54:28.573 | INFO     | src.avatar_generator.generator:_generate_with_wav2lip:158 - Using Wav2Lip for avatar generation
+2025-10-04 11:54:28.573 | INFO     | src.avatar_generator.generator:_generate_fallback:197 - Using fallback avatar generation
+2025-10-04 11:54:29.581 | WARNING  | src.avatar_generator.generator:_generate_fallback:217 - Could not get audio duration: No module named 'moviepy.editor'
+2025-10-04 11:54:29.840 | WARNING  | src.avatar_generator.generator:_generate_fallback:273 - Failed to add audio: No module named 'moviepy.editor'
+2025-10-04 11:54:29.840 | INFO     | __main__:main:172 - Avatar animated: temp/avatar_59296.mp4
+2025-10-04 11:54:29.841 | INFO     | src.pipeline:add_visuals:130 - Adding visual elements
+2025-10-04 11:54:29.841 | INFO     | src.visual_composer.composer:compose:61 - Composing video with visual enhancements
+2025-10-04 11:54:29.841 | INFO     | src.visual_composer.composer:_add_background:378 - Adding background to video
+2025-10-04 11:54:29.841 | INFO     | src.visual_composer.composer:_add_effects:399 - Adding visual effects
+2025-10-04 11:54:29.841 | INFO     | __main__:main:182 - Visuals added
+2025-10-04 11:54:29.841 | INFO     | src.pipeline:add_captions:152 - Adding captions
+2025-10-04 11:54:29.841 | INFO     | src.visual_composer.composer:add_subtitles:89 - Generating subtitles with Whisper
+2025-10-04 11:54:32.572 | INFO     | src.visual_composer.composer:_generate_subtitles_with_whisper:114 - Loading Whisper model: base
+2025-10-04 11:54:37.896 | INFO     | src.visual_composer.composer:_generate_subtitles_with_whisper:128 - Generated subtitles: temp/subtitles_59296.srt
+2025-10-04 11:54:38.042 | WARNING  | src.visual_composer.composer:_burn_subtitles_ffmpeg:211 - FFmpeg subtitle burning failed: ffmpeg error (see stderr output for detail), using alternative method
+2025-10-04 11:54:38.288 | INFO     | __main__:main:194 - Captions added
+2025-10-04 11:54:38.289 | INFO     | src.pipeline:export_video:174 - Exporting video: output/make_kids_learn_addition_educational_30s.mp4
+2025-10-04 11:54:38.289 | INFO     | src.video_exporter.exporter:export:102 - Exporting video with instagram preset
+2025-10-04 11:54:38.289 | INFO     | src.video_exporter.exporter:export:116 - Running FFmpeg command: ffmpeg -i temp/avatar_59296_subtitled.mp4 -y -c:v h264 -b:v 5M -vf scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black -r 30 -c:a aac -b:a 128k -ar 44100 -f mp4 -movflags +faststart -t 90 output/make_kids_learn_addition_educational_30s.mp4
+2025-10-04 11:54:39.336 | INFO     | src.video_exporter.exporter:export:118 - Video exported successfully: output/make_kids_learn_addition_educational_30s.mp4
