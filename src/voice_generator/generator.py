@@ -109,6 +109,11 @@ class VoiceGenerator:
         try:
             from bark import SAMPLE_RATE, generate_audio, preload_models
             from scipy.io.wavfile import write as write_wav
+            import torch
+            import numpy.core.multiarray
+            
+            # Fix PyTorch 2.6 compatibility
+            torch.serialization.add_safe_globals([numpy.core.multiarray.scalar])
             
             # Preload models
             preload_models()
