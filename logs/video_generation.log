@@ -242,3 +242,147 @@ Check the documentation of torch.load to learn more about types accepted by defa
 2025-10-04 12:04:48.429 | INFO     | src.video_exporter.exporter:export:102 - Exporting video with instagram preset
 2025-10-04 12:04:48.429 | INFO     | src.video_exporter.exporter:export:116 - Running FFmpeg command: ffmpeg -i temp/avatar_65678_subtitled.mp4 -y -c:v h264 -b:v 5M -vf scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black -r 30 -c:a aac -b:a 128k -ar 44100 -f mp4 -movflags +faststart -t 90 output/teaching_kids_addition_with_fu_educational_60s.mp4
 2025-10-04 12:04:49.187 | INFO     | src.video_exporter.exporter:export:118 - Video exported successfully: output/teaching_kids_addition_with_fu_educational_60s.mp4
+2025-10-04 12:09:43.083 | INFO     | src.config:_load_config:41 - Using default configuration
+2025-10-04 12:09:43.084 | INFO     | src.prompt_generator.generator:__init__:59 - Prompt generator initialized
+2025-10-04 12:09:43.084 | INFO     | src.script_writer.writer:__init__:37 - Script writer initialized
+2025-10-04 12:09:43.084 | INFO     | src.voice_generator.generator:__init__:63 - Voice generator initialized with bark engine
+2025-10-04 12:09:43.084 | INFO     | src.avatar_generator.generator:__init__:67 - Avatar generator initialized with wav2lip engine
+2025-10-04 12:09:43.084 | INFO     | src.visual_composer.composer:__init__:45 - Visual composer initialized with Whisper for captions
+2025-10-04 12:09:43.084 | INFO     | src.video_exporter.exporter:__init__:87 - Video exporter initialized with FFmpeg
+2025-10-04 12:09:43.084 | INFO     | src.pipeline:__init__:41 - Video generator initialized
+2025-10-04 12:09:43.085 | INFO     | src.pipeline:generate_script:56 - Generating script for topic: Teaching kids addition - 2 plus 2 equals 4
+2025-10-04 12:09:43.085 | INFO     | src.prompt_generator.generator:generate:74 - Generating prompt for: Teaching kids addition - 2 plus 2 equals 4
+2025-10-04 12:09:43.085 | INFO     | src.script_writer.writer:write:52 - Writing script for: Teaching kids addition - 2 plus 2 equals 4
+2025-10-04 12:09:43.210 | WARNING  | src.script_writer.writer:_generate_with_ollama:121 - Error with Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10a089070>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-10-04 12:09:43.210 | INFO     | src.script_writer.writer:_generate_fallback:165 - Using fallback script generation
+2025-10-04 12:09:43.210 | INFO     | __main__:main:153 - Script generated: 649 words
+2025-10-04 12:09:43.211 | INFO     | src.pipeline:generate_voice:86 - Generating voice with profile: default
+2025-10-04 12:09:43.211 | INFO     | src.voice_generator.generator:synthesize:78 - Synthesizing speech with default profile
+2025-10-04 12:09:49.446 | ERROR    | src.voice_generator.generator:_synthesize_with_bark:160 - Error with Bark synthesis: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([numpy.core.multiarray.scalar])` or the `torch.serialization.safe_globals([numpy.core.multiarray.scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+2025-10-04 12:09:49.449 | INFO     | src.voice_generator.generator:_synthesize_fallback:215 - Using fallback TTS synthesis
+2025-10-04 12:09:50.752 | INFO     | src.voice_generator.generator:_synthesize_fallback:247 - Fallback synthesis complete: temp/voice_69455.wav
+2025-10-04 12:09:51.267 | INFO     | __main__:main:162 - Voice synthesized: temp/voice_69455_processed.wav
+2025-10-04 12:09:51.268 | INFO     | src.pipeline:generate_avatar:109 - Generating avatar: default
+2025-10-04 12:09:51.268 | INFO     | src.avatar_generator.generator:generate:82 - Generating avatar video with default
+2025-10-04 12:09:51.268 | INFO     | src.avatar_generator.generator:_generate_with_wav2lip:158 - Using Wav2Lip for avatar generation
+2025-10-04 12:09:51.268 | INFO     | src.avatar_generator.generator:_generate_fallback:197 - Using fallback avatar generation
+2025-10-04 12:09:51.448 | WARNING  | src.avatar_generator.generator:_generate_fallback:217 - Could not get audio duration: No module named 'moviepy.editor'
+2025-10-04 12:09:51.659 | WARNING  | src.avatar_generator.generator:_generate_fallback:273 - Failed to add audio: No module named 'moviepy.editor'
+2025-10-04 12:09:51.659 | INFO     | __main__:main:172 - Avatar animated: temp/avatar_69455.mp4
+2025-10-04 12:09:51.660 | INFO     | src.pipeline:add_visuals:130 - Adding visual elements
+2025-10-04 12:09:51.660 | INFO     | src.visual_composer.composer:compose:61 - Composing video with visual enhancements
+2025-10-04 12:09:51.660 | INFO     | src.visual_composer.composer:_add_background:378 - Adding background to video
+2025-10-04 12:09:51.660 | INFO     | src.visual_composer.composer:_add_effects:399 - Adding visual effects
+2025-10-04 12:09:51.660 | INFO     | __main__:main:182 - Visuals added
+2025-10-04 12:09:51.660 | INFO     | src.pipeline:add_captions:152 - Adding captions
+2025-10-04 12:09:51.660 | INFO     | src.visual_composer.composer:add_subtitles:89 - Generating subtitles with Whisper
+2025-10-04 12:09:51.933 | INFO     | src.visual_composer.composer:_generate_subtitles_with_whisper:114 - Loading Whisper model: base
+2025-10-04 12:09:54.354 | INFO     | src.visual_composer.composer:_generate_subtitles_with_whisper:128 - Generated subtitles: temp/subtitles_69455.srt
+2025-10-04 12:09:54.445 | WARNING  | src.visual_composer.composer:_burn_subtitles_ffmpeg:211 - FFmpeg subtitle burning failed: ffmpeg error (see stderr output for detail), using alternative method
+2025-10-04 12:09:54.660 | INFO     | __main__:main:194 - Captions added
+2025-10-04 12:09:54.661 | INFO     | src.pipeline:export_video:174 - Exporting video: output/teaching_kids_addition_-_2_plu_educational_30s.mp4
+2025-10-04 12:09:54.661 | INFO     | src.video_exporter.exporter:export:102 - Exporting video with instagram preset
+2025-10-04 12:09:54.661 | INFO     | src.video_exporter.exporter:export:116 - Running FFmpeg command: ffmpeg -i temp/avatar_69455_subtitled.mp4 -y -c:v h264 -b:v 5M -vf scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black -r 30 -c:a aac -b:a 128k -ar 44100 -f mp4 -movflags +faststart -t 90 output/teaching_kids_addition_-_2_plu_educational_30s.mp4
+2025-10-04 12:09:55.421 | INFO     | src.video_exporter.exporter:export:118 - Video exported successfully: output/teaching_kids_addition_-_2_plu_educational_30s.mp4
+2025-10-04 12:12:01.602 | INFO     | src.config:_load_config:41 - Using default configuration
+2025-10-04 12:12:01.602 | INFO     | src.prompt_generator.generator:__init__:59 - Prompt generator initialized
+2025-10-04 12:12:01.602 | INFO     | src.script_writer.writer:__init__:37 - Script writer initialized
+2025-10-04 12:12:01.602 | INFO     | src.voice_generator.generator:__init__:63 - Voice generator initialized with bark engine
+2025-10-04 12:12:01.603 | INFO     | src.avatar_generator.generator:__init__:67 - Avatar generator initialized with wav2lip engine
+2025-10-04 12:12:01.603 | INFO     | src.visual_composer.composer:__init__:45 - Visual composer initialized with Whisper for captions
+2025-10-04 12:12:01.603 | INFO     | src.video_exporter.exporter:__init__:87 - Video exporter initialized with FFmpeg
+2025-10-04 12:12:01.603 | INFO     | src.pipeline:__init__:41 - Video generator initialized
+2025-10-04 12:12:01.603 | INFO     | src.pipeline:generate_script:56 - Generating script for topic: Kids learn math: 1 plus 1 equals 2
+2025-10-04 12:12:01.603 | INFO     | src.prompt_generator.generator:generate:74 - Generating prompt for: Kids learn math: 1 plus 1 equals 2
+2025-10-04 12:12:01.603 | INFO     | src.script_writer.writer:write:52 - Writing script for: Kids learn math: 1 plus 1 equals 2
+2025-10-04 12:12:01.714 | WARNING  | src.script_writer.writer:_generate_with_ollama:121 - Error with Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1036d4b00>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-10-04 12:12:01.714 | INFO     | src.script_writer.writer:_generate_fallback:165 - Using fallback script generation
+2025-10-04 12:12:01.714 | INFO     | __main__:main:153 - Script generated: 617 words
+2025-10-04 12:12:01.715 | INFO     | src.pipeline:generate_voice:86 - Generating voice with profile: default
+2025-10-04 12:12:01.715 | INFO     | src.voice_generator.generator:synthesize:78 - Synthesizing speech with default profile
+2025-10-04 12:12:07.612 | ERROR    | src.voice_generator.generator:_synthesize_with_bark:160 - Error with Bark synthesis: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([numpy.core.multiarray.scalar])` or the `torch.serialization.safe_globals([numpy.core.multiarray.scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+2025-10-04 12:12:07.614 | INFO     | src.voice_generator.generator:_synthesize_fallback:215 - Using fallback TTS synthesis
+2025-10-04 12:12:09.064 | INFO     | src.voice_generator.generator:_synthesize_fallback:247 - Fallback synthesis complete: temp/voice_71086.wav
+2025-10-04 12:12:10.175 | INFO     | __main__:main:162 - Voice synthesized: temp/voice_71086_processed.wav
+2025-10-04 12:12:10.175 | INFO     | src.pipeline:generate_avatar:109 - Generating avatar: default
+2025-10-04 12:12:10.176 | INFO     | src.avatar_generator.generator:generate:82 - Generating avatar video with default
+2025-10-04 12:12:10.176 | INFO     | src.avatar_generator.generator:_generate_with_wav2lip:158 - Using Wav2Lip for avatar generation
+2025-10-04 12:12:10.176 | INFO     | src.avatar_generator.generator:_generate_fallback:197 - Using fallback avatar generation
+2025-10-04 12:12:11.579 | WARNING  | src.avatar_generator.generator:_generate_fallback:273 - Failed to add audio: 'VideoFileClip' object has no attribute 'set_audio'
+2025-10-04 12:12:11.580 | INFO     | __main__:main:172 - Avatar animated: temp/avatar_71086.mp4
+2025-10-04 12:12:11.580 | INFO     | src.pipeline:add_visuals:130 - Adding visual elements
+2025-10-04 12:12:11.580 | INFO     | src.visual_composer.composer:compose:61 - Composing video with visual enhancements
+2025-10-04 12:12:11.580 | INFO     | src.visual_composer.composer:_add_background:378 - Adding background to video
+2025-10-04 12:12:11.580 | INFO     | src.visual_composer.composer:_add_effects:399 - Adding visual effects
+2025-10-04 12:12:11.580 | INFO     | __main__:main:182 - Visuals added
+2025-10-04 12:12:11.581 | INFO     | src.pipeline:add_captions:152 - Adding captions
+2025-10-04 12:12:11.581 | INFO     | src.visual_composer.composer:add_subtitles:89 - Generating subtitles with Whisper
+2025-10-04 12:12:11.870 | INFO     | src.visual_composer.composer:_generate_subtitles_with_whisper:114 - Loading Whisper model: base
+2025-10-04 12:12:14.208 | INFO     | src.visual_composer.composer:_generate_subtitles_with_whisper:128 - Generated subtitles: temp/subtitles_71086.srt
+2025-10-04 12:12:14.325 | WARNING  | src.visual_composer.composer:_burn_subtitles_ffmpeg:211 - FFmpeg subtitle burning failed: ffmpeg error (see stderr output for detail), using alternative method
+2025-10-04 12:12:15.112 | INFO     | __main__:main:194 - Captions added
+2025-10-04 12:12:15.113 | INFO     | src.pipeline:export_video:174 - Exporting video: output/kids_learn_math:_1_plus_1_equa_educational_30s.mp4
+2025-10-04 12:12:15.113 | INFO     | src.video_exporter.exporter:export:102 - Exporting video with instagram preset
+2025-10-04 12:12:15.114 | INFO     | src.video_exporter.exporter:export:116 - Running FFmpeg command: ffmpeg -i temp/avatar_71086_subtitled.mp4 -y -c:v h264 -b:v 5M -vf scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black -r 30 -c:a aac -b:a 128k -ar 44100 -f mp4 -movflags +faststart -t 90 output/kids_learn_math:_1_plus_1_equa_educational_30s.mp4
+2025-10-04 12:12:17.755 | INFO     | src.video_exporter.exporter:export:118 - Video exported successfully: output/kids_learn_math:_1_plus_1_equa_educational_30s.mp4
+2025-10-04 12:30:04.116 | INFO     | src.config:_load_config:41 - Using default configuration
+2025-10-04 12:30:04.117 | INFO     | src.prompt_generator.generator:__init__:59 - Prompt generator initialized
+2025-10-04 12:30:04.117 | INFO     | src.script_writer.writer:__init__:37 - Script writer initialized
+2025-10-04 12:30:04.117 | INFO     | src.voice_generator.generator:__init__:45 - Voice generator initialized with bark engine
+2025-10-04 12:30:04.117 | INFO     | src.avatar_generator.generator:_create_realistic_avatars:307 - Creating realistic avatar: professional_female
+2025-10-04 12:30:04.122 | INFO     | src.avatar_generator.generator:_create_realistic_avatars:307 - Creating realistic avatar: professional_male
+2025-10-04 12:30:04.125 | INFO     | src.avatar_generator.generator:_create_realistic_avatars:307 - Creating realistic avatar: casual_female
+2025-10-04 12:30:04.129 | INFO     | src.avatar_generator.generator:_create_realistic_avatars:307 - Creating realistic avatar: casual_male
+2025-10-04 12:30:04.132 | INFO     | src.avatar_generator.generator:_create_realistic_avatars:307 - Creating realistic avatar: tech_presenter
+2025-10-04 12:30:04.135 | INFO     | src.avatar_generator.generator:__init__:79 - Avatar generator initialized with wav2lip engine
+2025-10-04 12:30:04.135 | INFO     | src.visual_composer.composer:__init__:45 - Visual composer initialized with Whisper for captions
+2025-10-04 12:30:04.135 | INFO     | src.video_exporter.exporter:__init__:87 - Video exporter initialized with FFmpeg
+2025-10-04 12:30:04.135 | INFO     | src.pipeline:__init__:41 - Video generator initialized
+2025-10-04 12:30:04.136 | INFO     | src.pipeline:generate_script:56 - Generating script for topic: The future of artificial intelligence
+2025-10-04 12:30:04.138 | INFO     | src.prompt_generator.generator:generate:74 - Generating prompt for: The future of artificial intelligence
+2025-10-04 12:30:04.138 | INFO     | src.script_writer.writer:write:52 - Writing script for: The future of artificial intelligence
+2025-10-04 12:30:04.247 | WARNING  | src.script_writer.writer:_generate_with_ollama:121 - Error with Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1322c06e0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-10-04 12:30:04.247 | INFO     | src.script_writer.writer:_generate_fallback:165 - Using fallback script generation
+2025-10-04 12:30:04.247 | INFO     | __main__:main:153 - Script generated: 629 words
+2025-10-04 12:30:04.247 | INFO     | src.pipeline:generate_voice:86 - Generating voice with profile: female
+2025-10-04 12:30:04.247 | INFO     | src.voice_generator.generator:synthesize:60 - Synthesizing speech with female profile
+2025-10-04 12:30:11.111 | ERROR    | src.voice_generator.generator:_synthesize_with_bark:179 - Error with Bark synthesis: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([numpy.core.multiarray.scalar])` or the `torch.serialization.safe_globals([numpy.core.multiarray.scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+2025-10-04 12:30:14.584 | INFO     | src.voice_generator.generator:_synthesize_with_edge_tts:108 - Edge TTS synthesis complete: temp/voice/voice_ec132dc6.mp3
+2025-10-04 12:30:14.882 | INFO     | __main__:main:162 - Voice synthesized: temp/voice/voice_ec132dc6.mp3
+2025-10-04 12:30:14.883 | INFO     | src.pipeline:generate_avatar:109 - Generating avatar: default
+2025-10-04 12:30:14.883 | INFO     | src.avatar_generator.generator:generate:94 - Generating avatar video with default
+2025-10-04 12:30:14.883 | WARNING  | src.avatar_generator.generator:_check_wav2lip_available:131 - Wav2Lip checkpoint appears invalid (size: 9 bytes)
+2025-10-04 12:30:14.883 | WARNING  | src.avatar_generator.generator:generate:103 - Wav2Lip not fully configured, using enhanced fallback
+2025-10-04 12:30:14.883 | INFO     | src.avatar_generator.generator:_generate_enhanced_fallback:211 - Using enhanced fallback avatar generation
+2025-10-04 12:30:17.787 | WARNING  | src.avatar_generator.generator:_generate_enhanced_fallback:299 - Failed to add audio: 'VideoFileClip' object has no attribute 'set_audio'
+2025-10-04 12:30:17.788 | INFO     | __main__:main:172 - Avatar animated: temp/avatar_enhanced_82141.mp4
+2025-10-04 12:30:17.789 | INFO     | src.pipeline:add_visuals:130 - Adding visual elements
+2025-10-04 12:30:17.789 | INFO     | src.visual_composer.composer:compose:61 - Composing video with visual enhancements
+2025-10-04 12:30:17.789 | INFO     | src.visual_composer.composer:_add_background:378 - Adding background to video
+2025-10-04 12:30:17.789 | INFO     | src.visual_composer.composer:_add_effects:399 - Adding visual effects
+2025-10-04 12:30:17.789 | INFO     | __main__:main:182 - Visuals added
+2025-10-04 12:30:17.789 | INFO     | src.pipeline:add_captions:152 - Adding captions
+2025-10-04 12:30:17.789 | INFO     | src.visual_composer.composer:add_subtitles:89 - Generating subtitles with Whisper
+2025-10-04 12:30:18.397 | INFO     | src.visual_composer.composer:_generate_subtitles_with_whisper:114 - Loading Whisper model: base
+2025-10-04 12:30:20.819 | INFO     | src.visual_composer.composer:_generate_subtitles_with_whisper:128 - Generated subtitles: temp/subtitles_82141.srt
+2025-10-04 12:30:20.914 | WARNING  | src.visual_composer.composer:_burn_subtitles_ffmpeg:211 - FFmpeg subtitle burning failed: ffmpeg error (see stderr output for detail), using alternative method
+2025-10-04 12:30:21.777 | INFO     | __main__:main:194 - Captions added
+2025-10-04 12:30:21.778 | INFO     | src.pipeline:export_video:174 - Exporting video: output/the_future_of_artificial_intel_educational_30s.mp4
+2025-10-04 12:30:21.778 | INFO     | src.video_exporter.exporter:export:102 - Exporting video with instagram preset
+2025-10-04 12:30:21.778 | INFO     | src.video_exporter.exporter:export:116 - Running FFmpeg command: ffmpeg -i temp/avatar_enhanced_82141_subtitled.mp4 -y -c:v h264 -b:v 5M -vf scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black -r 30 -c:a aac -b:a 128k -ar 44100 -f mp4 -movflags +faststart -t 90 output/the_future_of_artificial_intel_educational_30s.mp4
+2025-10-04 12:30:24.144 | INFO     | src.video_exporter.exporter:export:118 - Video exported successfully: output/the_future_of_artificial_intel_educational_30s.mp4
