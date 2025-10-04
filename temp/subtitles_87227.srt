@@ -1,0 +1,20 @@
+1
+00:00:00,000 --> 00:00:04,259
+Now about top 5 Python tips for beginners. There's something interesting here.
+
+2
+00:00:04,259 --> 00:00:06,820
+Now about top 5 Python tips for beginners.
+
+3
+00:00:06,820 --> 00:00:08,820
+There's something interesting here.
+
+4
+00:00:08,820 --> 00:00:12,660
+Now about top 5 Python tips for beginners. There's something interesting here.
+
+5
+00:00:12,660 --> 00:00:16,699
+Now about top 5 Python tips for beginners. There's something interesting here.
+

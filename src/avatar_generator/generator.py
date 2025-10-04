@@ -41,8 +41,14 @@ class AvatarGenerator:
         
         # Avatar configurations with real human face images
         self.avatars = {
+            "default": {
+                "image": "real_person.jpg",
+                "description": "Real human presenter",
+                "style": "professional",
+                "gender": "female"
+            },
             "professional_female": {
-                "image": "professional_female.jpg",
+                "image": "real_person.jpg",
                 "description": "Professional female presenter",
                 "style": "professional",
                 "gender": "female"
@@ -225,7 +231,7 @@ class AvatarGenerator:
         
         # Get audio duration and analyze for lip sync
         try:
-            from moviepy.editor import AudioFileClip
+            from moviepy import AudioFileClip
             audio_clip = AudioFileClip(audio_path)
             duration = audio_clip.duration
             
@@ -275,10 +281,10 @@ class AvatarGenerator:
         
         # Add audio to video
         try:
-            from moviepy.editor import VideoFileClip, AudioFileClip
+            from moviepy import VideoFileClip, AudioFileClip
             video = VideoFileClip(str(output_path))
             audio = AudioFileClip(audio_path)
-            final_video = video.set_audio(audio)
+            final_video = video.with_audio(audio)  # Use with_audio instead of set_audio
             
             final_output = str(output_path).replace('.mp4', '_with_audio.mp4')
             final_video.write_videofile(
